@@ -47,8 +47,8 @@ export default function DashboardPage() {
     const fetchData = async () => {
       try {
         const [userRes, claimsRes] = await Promise.all([
-          axios.get(`/api/user/${userId}`),
-          axios.get(`/api/claims/user/${userId}`)
+          axios.get(`https://deliversurex-backend.onrender.com/api/user/${userId}`),
+          axios.get(`https://deliversurex-backend.onrender.com/api/claims/user/${userId}`)
         ]);
         
         const userData = userRes.data.user;
@@ -69,7 +69,7 @@ export default function DashboardPage() {
 
   const activatePolicy = async () => {
     try {
-      const res = await axios.post('/api/policy/activate', { userId: user._id });
+      const res = await axios.post('https://deliversurex-backend.onrender.com/api/policy/activate', { userId: user._id });
       if (res.data.success) setUser(res.data.user);
     } catch (err) {
       alert('Failed to activate policy.');
