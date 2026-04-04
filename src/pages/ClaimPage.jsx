@@ -42,7 +42,7 @@ export default function ClaimPage() {
     const userId = localStorage.getItem('userId');
     
     try {
-      const res = await axios.post('/api/claims/report', {
+      const res = await axios.post('https://deliversurex-backend.onrender.com/api/claims/report', {
         userId,
         disruptionType,
         duration,

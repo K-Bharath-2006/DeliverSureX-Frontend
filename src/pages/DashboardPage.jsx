@@ -23,7 +23,7 @@ export default function DashboardPage() {
         );
       });
 
-      const res = await axios.post('/api/premium/live', { lat: coords.lat, lon: coords.lon });
+      const res = await axios.post('https://deliversurex-backend.onrender.com/api/premium/live', { lat: coords.lat, lon: coords.lon });
       setPremiumData(res.data);
     } catch (err) {
       if (err.code === 1) {

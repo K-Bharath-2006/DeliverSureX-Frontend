@@ -26,7 +26,7 @@ export default function RegistrationPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('/api/register', formData);
+      const res = await axios.post('https://deliversurex-backend.onrender.com/api/register', formData);
       if (res.data.success) {
         localStorage.setItem('userId', res.data.user._id);
         localStorage.setItem('userCity', res.data.user.city);
